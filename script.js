@@ -80,42 +80,48 @@ if (mobileMenuToggle) {
     });
 }
 
-// Logo click to scroll to top
-const logo = document.querySelector('.logo');
-if (logo) {
-    logo.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const href = this.getAttribute('href');
-        
-        // If it's just "#", scroll to top
-        if (href === '#') {
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Logo click to scroll to top
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', function (e) {
+            e.preventDefault();
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
-            return;
-        }
-        
-        // Otherwise, scroll to the target element
-        const target = document.querySelector(href);
-        if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
+        });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            
+            // Skip if it's a link to external page or empty
+            if (!href || href === '#') {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return;
+            }
+            
+            // Otherwise, scroll to the target element
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const headerHeight = 80;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
 
