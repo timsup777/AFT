@@ -463,47 +463,86 @@ body {
     background: #f5f5f5;
 }
 
-.avis-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+.avis-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.avis-intro {
     margin-bottom: 50px;
 }
 
-.avis-card {
-    background: #fff;
-    border: 2px solid #e0e0e0;
-    padding: 30px;
-    border-radius: 8px;
-}
-
-.stars {
+.stars-display {
     color: #ffa500;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 3rem;
+    margin-bottom: 25px;
+    letter-spacing: 10px;
 }
 
-.avis-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-    color: #333;
+.avis-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.avis-author {
+.avis-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto 40px;
+}
+
+.btn-avis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 35px;
+    text-decoration: none;
     font-weight: 700;
-    margin-bottom: 5px;
+    font-size: 1rem;
+    border: 3px solid #000;
+    transition: all 0.3s ease;
+    background: #fff;
+    color: #000;
 }
 
-.avis-date {
-    font-size: 0.85rem;
-    color: #999;
+.btn-avis:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.google-rating {
-    text-align: center;
-    font-size: 1.1rem;
-    margin-top: 40px;
+.btn-avis.google:hover {
+    background: #4285f4;
+    color: #fff;
+    border-color: #4285f4;
+}
+
+.btn-avis.email:hover {
+    background: #000;
+    color: #fff;
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+}
+
+.avis-info {
+    padding: 30px;
+    background: rgba(0,0,0,0.05);
+    border-left: 4px solid #000;
+}
+
+.avis-info p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
 }
 
 /* Tarifs Section */
@@ -910,8 +949,18 @@ body {
         font-size: 1rem;
     }
     
-    .avis-grid {
-        grid-template-columns: 1fr;
+    .avis-actions {
+        max-width: 100%;
+    }
+    
+    .btn-avis {
+        padding: 18px 25px;
+        font-size: 0.95rem;
+    }
+    
+    .stars-display {
+        font-size: 2.5rem;
+        letter-spacing: 8px;
     }
     
     .faq-item {
