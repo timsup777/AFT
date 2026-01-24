@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artisan Affuteur Rémouleur à Vélo - Service d'affûtage professionnel à domicile">
+    <title>Artisan Affuteur Rémouleur à Vélo</title>
+    <script>
+        // Force scroll to top before anything else
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.history.scrollRestoration = 'manual';
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: auto !important;
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden;">
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <h1>Affûteur<br>à Vélo</h1>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#tarifs">TARIFS</a></li>
+                        <li><a href="#apropos">À PROPOS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="slides-container">
+            <div class="slide active">
+                <div class="slide-content">
+                    <div class="hero-box">
+                        <h2 class="hero-logo">Affûteur à Vélo</h2>
+                        <h3 class="hero-title">ARTISAN RÉMOULEUR<br>AFFUTEUR À VÉLO</h3>
+                    </div>
+                    <a href="#agenda" class="btn-hero">Prendre RDV</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="hero-box">
+                        <h2 class="hero-logo">Service écologique</h2>
+                        <h3 class="hero-title">DÉPLACEMENT À VÉLO<br>DANS TOUT PARIS</h3>
+                    </div>
+                    <a href="#agenda" class="btn-hero">Prendre RDV</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="hero-box">
+                        <h2 class="hero-logo">Qualité professionnelle</h2>
+                        <h3 class="hero-title">AFFÛTAGE EXPERT<br>À DOMICILE</h3>
+                    </div>
+                    <a href="#apropos" class="btn-hero">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
+            <button class="slider-btn next" onclick="changeSlide(1)">›</button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- Les Tranchants Section -->
+    <section id="services" class="tranchants">
+        <div class="container">
+            <h2 class="section-title">LES LAMES</h2>
+            <div class="tranchants-grid">
+                <a href="#cuisine" class="tranchant-card">
+                    <div class="icon">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Couteau -->
+                            <path d="M30 70 L40 25 L50 20 L60 25 L50 70 Z" stroke="black" stroke-width="2" fill="none"/>
+                            <line x1="35" y1="40" x2="55" y2="40" stroke="black" stroke-width="1"/>
+                            <circle cx="45" cy="32" r="2" fill="black"/>
+                            <line x1="50" y1="70" x2="53" y2="78" stroke="black" stroke-width="2"/>
+                            <line x1="30" y1="70" x2="27" y2="78" stroke="black" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h4>COUTEAUX</h4>
+                    <p>Couteaux de table, cuisine, bouchers, japonais, etc...</p>
+                </a>
+                
+                <a href="#maison" class="tranchant-card">
+                    <div class="icon">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Ciseaux -->
+                            <circle cx="35" cy="30" r="10" stroke="black" stroke-width="2" fill="none"/>
+                            <circle cx="65" cy="30" r="10" stroke="black" stroke-width="2" fill="none"/>
+                            <path d="M 40 38 L 50 60 L 35 80" stroke="black" stroke-width="2.5" fill="none"/>
+                            <path d="M 60 38 L 50 60 L 65 80" stroke="black" stroke-width="2.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <h4>CISEAUX</h4>
+                    <p>Ciseaux de couture, cuisine, etc...</p>
+                </a>
+                
+                <a href="#jardin" class="tranchant-card">
+                    <div class="icon">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Sécateur -->
+                            <path d="M 30 30 L 50 60 L 35 75" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                            <path d="M 70 30 L 50 60 L 65 75" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                            <ellipse cx="30" cy="30" rx="6" ry="8" stroke="black" stroke-width="2" fill="none"/>
+                            <ellipse cx="70" cy="30" rx="6" ry="8" stroke="black" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h4>OUTILS</h4>
+                    <p>Sécateur, cisaille, lame de tondeuse, hache etc...</p>
+                </a>
+                
+                <a href="#maison" class="tranchant-card">
+                    <div class="icon">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Épée -->
+                            <rect x="47" y="15" width="6" height="10" fill="black"/>
+                            <line x1="50" y1="25" x2="50" y2="70" stroke="black" stroke-width="2.5"/>
+                            <line x1="35" y1="30" x2="65" y2="30" stroke="black" stroke-width="2"/>
+                            <path d="M 45 70 L 50 80 L 55 70 Z" fill="black"/>
+                        </svg>
+                    </div>
+                    <h4>AUTRES</h4>
+                    <p>Épée, sabre, dague, katana, fleuret, etc...</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- À Propos Section -->
+    <section id="apropos" class="apropos">
+        <div class="container">
+            <h2 class="section-title">À PROPOS</h2>
+            <div class="apropos-content">
+                <p>Passionné par l'art ancestral du rémoulage, je me consacre à ce métier avec professionnalisme et savoir-faire. Mon métier consiste à redonner vie à vos outils et objets tranchants, en combinant techniques traditionnelles et méthodes modernes d'affûtage.</p>
+                
+                <p>Formé aux meilleures pratiques de ce métier d'artisan, j'ai créé mon entreprise pour proposer un service unique : <strong>l'affûtage à domicile à vélo</strong>.</p>
+                
+                <p>Que vous soyez particulier ou professionnel, je me déplace chez vous à vélo pour affûter tous vos outils et objets tranchants. Cela va des couteaux de cuisine, aux ciseaux de couture en passant par les sécateurs, les outils de jardin, jusqu'aux sabres et katana.</p>
+                
+                <p>Le service est de qualité professionnelle, rapide, respectueux de l'environnement et les tarifs sont compétitifs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis Clients Section -->
+    <section class="avis">
+        <div class="container">
+            <h2 class="section-title">LES AVIS CLIENTS</h2>
+            <div class="avis-grid">
+                <div class="avis-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="avis-text">Service parfait. Très fiable et a su donner à mes couteaux une nouvelle jeunesse. Le déplacement à vélo est un vrai plus écologique !</p>
+                    <p class="avis-author">Gabrielle de Courtois</p>
+                    <p class="avis-date">2022-03-08</p>
+                </div>
+                
+                <div class="avis-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="avis-text">Très professionnel dans son travail. Je recommande !</p>
+                    <p class="avis-author">Irene Ferre</p>
+                    <p class="avis-date">2022-02-01</p>
+                </div>
+                
+                <div class="avis-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="avis-text">Excellent travail et très accommodant pour les horaires. Le service à vélo est très pratique !</p>
+                    <p class="avis-author">Ben P</p>
+                    <p class="avis-date">2022-01-30</p>
+                </div>
+                
+                <div class="avis-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="avis-text">Ce jeune garçon a rénové les beaux couteaux de mon papa et il en est ravi. Service rapide et soigné.</p>
+                    <p class="avis-author">Salomé B</p>
+                    <p class="avis-date">2022-01-27</p>
+                </div>
+            </div>
+            <div class="google-rating">
+                <p>Évaluation <strong>Google</strong> : <strong>4.9</strong> sur 5, Basée sur <strong>11 avis</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarifs Section -->
+    <section id="tarifs" class="tarifs-section">
+        <div class="container">
+            <h2 class="section-title">GRILLE TARIFAIRE</h2>
+            <div class="tarifs-grid">
+                <div class="tarif-category" id="jardin">
+                    <h3 class="tarif-category-title">JARDIN</h3>
+                    <div class="tarif-list">
+                        <div class="tarif-line">
+                            <span class="tarif-name">Sécateur</span>
+                            <span class="tarif-price">7,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Cisaille / serpe</span>
+                            <span class="tarif-price">9,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Ciseaux à bois</span>
+                            <span class="tarif-price">7,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Hache</span>
+                            <span class="tarif-price">11,50 €</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tarif-category" id="maison">
+                    <h3 class="tarif-category-title">MAISON</h3>
+                    <div class="tarif-list">
+                        <div class="tarif-line">
+                            <span class="tarif-name">Ciseaux</span>
+                            <span class="tarif-price">5,50 € / 12,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Rasoir coupe-choux</span>
+                            <span class="tarif-price">49,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Épée / sabre</span>
+                            <span class="tarif-price">49,50 € / 79,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Lame de tondeuse</span>
+                            <span class="tarif-price">14,50 €</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tarif-category" id="entretien">
+                    <h3 class="tarif-category-title">ENTRETIEN</h3>
+                    <div class="tarif-list">
+                        <div class="tarif-line">
+                            <span class="tarif-name">Polissage</span>
+                            <span class="tarif-price">4,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Pointe</span>
+                            <span class="tarif-price">4,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Rayure</span>
+                            <span class="tarif-price">4,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Rouilles</span>
+                            <span class="tarif-price">4,50 €</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tarif-category" id="cuisine">
+                    <h3 class="tarif-category-title">CUISINE</h3>
+                    <div class="tarif-list">
+                        <div class="tarif-line">
+                            <span class="tarif-name">Couteau de cuisine</span>
+                            <span class="tarif-price">4,50 € / 11,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Mandoline</span>
+                            <span class="tarif-price">9,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Couteau circulaire</span>
+                            <span class="tarif-price">6,50 €</span>
+                        </div>
+                        <div class="tarif-line">
+                            <span class="tarif-name">Couteau japonais</span>
+                            <span class="tarif-price">4,50 € / 11,50 €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tarifs-info">
+                <p><strong>Déplacement GRATUIT à vélo dans tout Paris</strong></p>
+                <p>Possibilité de réduction pour les professionnels selon le volume</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clientèle Section -->
+    <section class="clientele">
+        <div class="container">
+            <h2 class="section-title">CLIENTÈLE</h2>
+            <div class="clientele-grid">
+                <div class="clientele-card">
+                    <h3>Particuliers</h3>
+                </div>
+                <div class="clientele-card">
+                    <h3>Professionnels</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">F.A.Q</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>Où êtes-vous situé ?</h4>
+                    <p>Je suis basé dans le 19ème arrondissement de Paris. Je me déplace à vélo dans tout Paris et ses alentours. C'est le principe de mon service : je viens directement chez vous !</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Y a-t-il un service de livraison ?</h4>
+                    <p>Oui, je me déplace à vélo dans tout Paris GRATUITEMENT. Je me déplace la journée et en soirée.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Quels sont vos horaires d'ouverture ?</h4>
+                    <p>Je suis disponible du lundi au samedi de 9h à 20h (sur rdv uniquement). Les déplacements se font toute la semaine même le dimanche.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Quel est le délai pour une commande ?</h4>
+                    <p>Si vous venez sur place, comptez entre 5 et 15 minutes (tout dépend de l'objet). Pour la livraison, comptez entre 12 et 24h (réceptionné le soir et rendu le matin).</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Quels sont les moyens de paiement acceptés ?</h4>
+                    <p>Les moyens de paiement acceptés sont : virement, chèque et espèce.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Combien ça coûte de faire remouler un objet ?</h4>
+                    <p>Le prix dépend de l'objet dont il est question. Les tarifs commencent à partir de 4,50€ pour un couteau simple. Consultez notre grille tarifaire complète ci-dessus.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Faites-vous des réductions pour les entreprises ?</h4>
+                    <p>Un geste commercial pourra être possible en fonction du volume de la commande.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="agenda">
+        <div class="container">
+            <h2 class="section-title">PRENDRE RDV</h2>
+            <div class="agenda-content">
+                <!-- Système de réservation Calendly -->
+                <div class="booking-wrapper">
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/u2283923948/rdv-affutage" style="min-width:320px;height:700px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p><strong>EMAIL</strong><br><a href="mailto:jeanmberthelot@gmail.com" class="email-link">jeanmberthelot@gmail.com</a></p>
+                    <p><strong>TÉLÉPHONE</strong><br><a href="sms:+33676041749" class="phone-link">06 76 04 17 49</a></p>
+                    <p><strong>ADRESSE</strong><br>Paris 19ème - Intervention dans tout Paris</p>
+                    <p><strong>INSTAGRAM</strong><br><a href="https://www.instagram.com/laffuteur_a_velo/" target="_blank" rel="noopener noreferrer" class="instagram-link">@laffuteur_a_velo</a></p>
+                </div>
+                <div class="footer-links">
+                    <a href="#mentions">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Calendly Widget Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>

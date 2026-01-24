@@ -1,0 +1,1061 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+html.loaded {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    line-height: 1.6;
+    background: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: opacity 0.3s;
+}
+
+.main-nav a:hover {
+    opacity: 0.7;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+}
+
+/* Hero Slider */
+.hero-slider {
+    margin-top: 80px;
+    height: 90vh;
+    position: relative;
+    background: linear-gradient(to right, #0f1f35 0%, #1a3a5f 55%, #000000 100%);
+    overflow: hidden;
+}
+
+.hero-slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0,0,0,0.4) 55%, rgba(0,0,0,0.5) 100%);
+    z-index: 2;
+}
+
+.slides-container {
+    position: relative;
+    height: 100%;
+    z-index: 2;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 0;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+    z-index: 1;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.slide:nth-child(1)::after {
+    background-image: url('../images/velo-affutage.jpg');
+}
+
+.slide:nth-child(2)::after {
+    background-image: url('../images/slide2.jpg');
+}
+
+.slide:nth-child(3)::after {
+    background-image: url('../images/slide3.jpg');
+}
+
+.slide-content {
+    text-align: left;
+    position: relative;
+    z-index: 10;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 4rem 0 6rem;
+    color: white;
+}
+
+/* Slider Controls */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.slider-btn {
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 3rem;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.3s;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 100;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+.hero-box {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 40px;
+    border: none;
+}
+
+.hero-logo {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #fff;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.btn-hero {
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    padding: 18px 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    border: 2px solid #fff;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-hero:hover {
+    background: #fff;
+    color: #000;
+    transform: translateX(5px);
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    margin-bottom: 60px;
+    padding-top: 80px;
+}
+
+/* Les Tranchants */
+.tranchants {
+    padding: 40px 0 100px;
+    background: #fff;
+}
+
+.tranchants-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tranchant-card {
+    background: #f5f5f5;
+    border: 3px solid #000;
+    padding: 50px 35px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.tranchant-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent);
+    transition: left 0.5s;
+}
+
+.tranchant-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border-color: #000;
+}
+
+.tranchant-card:hover::before {
+    left: 100%;
+}
+
+.tranchant-card:nth-child(1) {
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.tranchant-card:nth-child(2) {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.tranchant-card:nth-child(3) {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.tranchant-card:nth-child(4) {
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tranchant-card .icon {
+    display: none;
+}
+
+.tranchant-card h4 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #000;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.tranchant-card:hover h4 {
+    transform: scale(1.02);
+}
+
+.tranchant-card p {
+    color: #999;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    transition: color 0.3s;
+    margin: 0;
+}
+
+.tranchant-card:hover p {
+    color: #666;
+}
+
+.tranchant-card h4 {
+    color: #000;
+}
+
+.tranchant-card:hover h4 {
+    color: #000;
+}
+
+/* À Propos */
+.apropos {
+    padding: 40px 0 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%232b2b2b" width="1200" height="800"/></svg>') center/cover;
+    background-color: #2b2b2b;
+    color: #fff;
+    position: relative;
+}
+
+.apropos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.apropos .container {
+    position: relative;
+    z-index: 10;
+}
+
+.apropos .section-title {
+    color: #fff;
+}
+
+.apropos-content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.apropos-content p {
+    margin-bottom: 25px;
+}
+
+.apropos-content strong {
+    font-weight: 700;
+}
+
+/* Avis Clients */
+.avis {
+    padding: 40px 0 100px;
+    background: #f5f5f5;
+}
+
+.avis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.avis-card {
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.stars {
+    color: #ffa500;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.avis-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.avis-author {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.avis-date {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.google-rating {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 40px;
+}
+
+/* Tarifs Section */
+.tarifs-section {
+    padding: 40px 0 100px;
+    background: #f5f5f5;
+}
+
+.tarifs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tarif-category {
+    background: #fff;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.tarif-category-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #000;
+}
+
+.tarif-list {
+    text-align: left;
+}
+
+.tarif-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tarif-line:last-child {
+    border-bottom: none;
+}
+
+.tarif-name {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.tarif-line .tarif-price {
+    font-weight: 700;
+    color: #000;
+    font-size: 0.95rem;
+}
+
+.tarifs-info {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.tarifs-info p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.tarifs-info strong {
+    font-weight: 700;
+}
+
+/* Clientèle */
+.clientele {
+    padding: 40px 0 100px;
+    background: #fff;
+}
+
+.clientele-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.clientele-card {
+    text-align: center;
+    padding: 80px 40px;
+    background: #f5f5f5;
+    border: 3px solid #000;
+}
+
+.clientele-card h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* FAQ */
+.faq {
+    padding: 40px 0 100px;
+    background: #f5f5f5;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.faq-item h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+}
+
+.faq-item p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Agenda */
+.agenda {
+    padding: 40px 0 100px;
+    background: #f5f5f5;
+}
+
+.agenda-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.agenda-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.agenda-intro p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.booking-wrapper {
+    background: #fff;
+    padding: 20px;
+    border: 3px solid #000;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    min-height: 700px;
+}
+
+.calendly-inline-widget {
+    width: 100%;
+    min-height: 700px;
+}
+
+.agenda-info-box {
+    margin-bottom: 50px;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-item {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 30px;
+    text-align: center;
+}
+
+.info-item h4 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.info-item p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 5px;
+}
+
+.rdv-contact {
+    text-align: center;
+    background: #fff;
+    border: 3px solid #000;
+    padding: 40px;
+}
+
+.rdv-contact h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-rdv {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 18px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 2px solid #000;
+    transition: all 0.3s;
+}
+
+.btn-rdv:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.site-footer {
+    background: #000;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-info {
+    margin-bottom: 30px;
+}
+
+.footer-info p {
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.footer-info strong {
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+}
+
+.email-link,
+.phone-link,
+.instagram-link {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.email-link:hover,
+.phone-link:hover,
+.instagram-link:hover {
+    opacity: 0.7;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    
+    .hero-slider {
+        height: 65vh;
+        margin-top: 70px;
+    }
+    
+    .slide {
+        grid-template-columns: 1fr;
+    }
+    
+    .slide::after {
+        display: none;
+    }
+    
+    .slide-content {
+        padding: 0 2rem;
+        grid-column: 1;
+    }
+    
+    .hero-logo {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-title {
+        font-size: 1.1rem;
+    }
+    
+    .btn-hero {
+        padding: 15px 35px;
+        font-size: 0.9rem;
+    }
+    
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.8rem;
+    }
+    
+    .slider-controls {
+        padding: 0 10px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+        letter-spacing: 0.12em;
+        padding-top: 60px;
+        margin-bottom: 40px;
+    }
+    
+    .tranchants-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 100%;
+    }
+    
+    .tranchant-card {
+        padding: 35px 25px;
+        min-height: 160px;
+    }
+    
+    .tranchant-card h4 {
+        font-size: 1.3rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .tarifs-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .tarif-category {
+        padding: 30px 20px;
+    }
+    
+    .tarif-category-title {
+        font-size: 1.2rem;
+    }
+    
+    .clientele-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .clientele-card {
+        padding: 60px 30px;
+    }
+    
+    .clientele-card h3 {
+        font-size: 2rem;
+    }
+    
+    .apropos-content {
+        text-align: left;
+        font-size: 1rem;
+    }
+    
+    .avis-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-item {
+        padding: 25px 20px;
+    }
+    
+    .booking-wrapper {
+        padding: 5px;
+        border-width: 2px;
+    }
+    
+    .calendly-inline-widget {
+        min-height: 600px;
+    }
+    
+    .agenda-intro p {
+        font-size: 1rem;
+    }
+    
+    .footer-info p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .site-header {
+        padding: 12px 0;
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-slider {
+        height: 60vh;
+        margin-top: 65px;
+    }
+    
+    .slide-content {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-logo {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-title {
+        font-size: 1rem;
+        letter-spacing: 0.08em;
+    }
+    
+    .btn-hero {
+        padding: 14px 30px;
+        font-size: 0.85rem;
+    }
+    
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.5rem;
+    }
+    
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+        padding-top: 50px;
+        margin-bottom: 35px;
+        letter-spacing: 0.1em;
+    }
+    
+    .tranchant-card {
+        padding: 30px 20px;
+        min-height: 140px;
+    }
+    
+    .tranchant-card h4 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .tranchant-card p {
+        font-size: 0.9rem;
+    }
+    
+    .tarif-category {
+        padding: 25px 15px;
+    }
+    
+    .tarif-category-title {
+        font-size: 1.1rem;
+    }
+    
+    .tarif-line {
+        padding: 10px 0;
+    }
+    
+    .tarif-name,
+    .tarif-price {
+        font-size: 0.85rem;
+    }
+    
+    .clientele-card {
+        padding: 50px 25px;
+    }
+    
+    .clientele-card h3 {
+        font-size: 1.8rem;
+    }
+    
+    .apropos-content {
+        font-size: 0.95rem;
+    }
+    
+    .faq-item {
+        padding: 20px 15px;
+    }
+    
+    .faq-item h4 {
+        font-size: 1rem;
+    }
+    
+    .faq-item p {
+        font-size: 0.9rem;
+    }
+    
+    .booking-wrapper {
+        padding: 3px;
+    }
+    
+    .calendly-inline-widget {
+        min-height: 550px;
+    }
+    
+    .footer-info p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+}
