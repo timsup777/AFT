@@ -304,9 +304,9 @@ body {
 
 .tranchants-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 35px;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -553,7 +553,7 @@ body {
 
 .tarifs-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 50px;
     max-width: 1200px;
@@ -638,11 +638,12 @@ body {
 }
 
 .clientele-card h3 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     word-wrap: break-word;
-    hyphens: auto;
+    hyphens: none;
+    white-space: nowrap;
 }
 
 /* FAQ */
@@ -661,7 +662,6 @@ body {
     border: 2px solid #e0e0e0;
     padding: 30px;
     margin-bottom: 20px;
-    border-radius: 8px;
 }
 
 .faq-item h4 {
@@ -679,7 +679,7 @@ body {
 /* Agenda */
 .agenda {
     padding: 40px 0 100px;
-    background: #f5f5f5;
+    background: #fff;
 }
 
 .agenda-content {
@@ -919,7 +919,7 @@ body {
     .tranchants-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-        max-width: 100%;
+        max-width: 500px;
     }
     
     .tranchant-card {
