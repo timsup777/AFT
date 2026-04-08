@@ -704,18 +704,19 @@ body {
     font-weight: 500;
 }
 
-.booking-wrapper {
-    background: #fff;
-    padding: 20px;
+.video-wrapper {
     border: 3px solid #000;
     margin-bottom: 50px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    min-height: 700px;
+    line-height: 0;
 }
 
-.calendly-inline-widget {
+.video-wrapper video {
     width: 100%;
-    min-height: 700px;
+    display: block;
+    max-height: 80vh;
+    object-fit: contain;
+    background: #000;
 }
 
 .agenda-info-box {
@@ -986,15 +987,6 @@ body {
         padding: 25px 20px;
     }
     
-    .booking-wrapper {
-        padding: 5px;
-        border-width: 2px;
-    }
-    
-    .calendly-inline-widget {
-        min-height: 600px;
-    }
-    
     .agenda-intro p {
         font-size: 1rem;
     }
@@ -1116,14 +1108,6 @@ body {
     
     .faq-item p {
         font-size: 0.9rem;
-    }
-    
-    .booking-wrapper {
-        padding: 3px;
-    }
-    
-    .calendly-inline-widget {
-        min-height: 550px;
     }
     
     .footer-info p {
